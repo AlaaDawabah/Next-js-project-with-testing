@@ -5,16 +5,11 @@ import * as API from "./api";
 
 function* getUsersList() {
   try {
-    const response = yield call(API.getUsersList());
-    console.log("response",response)
-    // yield put(
-    //   ACTIONS.recieveUsersList({
-    //   })
-    // );
-  } catch (error) {
-  }
+    const { data } = yield call(API.getUsersList);
+    console.log("response", data);
+    yield put(ACTIONS.recieveUsersList(data));
+  } catch (error) {}
 }
-
 
 export function* usersSagas() {
   yield takeLatest(TYPES.GET_USERS_LIST, getUsersList);

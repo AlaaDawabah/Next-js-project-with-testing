@@ -1,7 +1,7 @@
 import * as types from "./types";
 
 const initialState = {
-  users: []
+  usersList: []
 };
 
 export const users = (state = initialState, action) => {
@@ -9,7 +9,7 @@ export const users = (state = initialState, action) => {
     case types.RECIEVE_USERS_LIST:
       return {
         ...state,
-        users: action.payload
+        usersList: action.payload
       };
     default:
       return state;
