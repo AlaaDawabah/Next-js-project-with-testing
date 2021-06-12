@@ -1,0 +1,2 @@
+export const GET_USERS_LIST = 'GET_USERS_LIST';
+export const RECIEVE_USERS_LIST = 'RECIEVE_USERS_LIST';
