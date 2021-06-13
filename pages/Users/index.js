@@ -18,8 +18,7 @@ const index = () => {
   }, []);
   
   const getCardDetails = (id) => {
-    dispatch(getUserDetails({id}))
-    router.push(`/Users/${id}`)
+    router.push(`/users/${id}`)
   }
 
   return (
