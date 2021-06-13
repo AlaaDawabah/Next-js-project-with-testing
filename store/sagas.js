@@ -11,6 +11,15 @@ function* getUsersList() {
   } catch (error) {}
 }
 
+function* getUserDetails({payload}) {
+  try {
+    const { data } = yield call(API.getUserDetails, payload );
+    console.log("response", data);
+    yield put(ACTIONS.recieveUserDetails(data));
+  } catch (error) {}
+}
+
 export function* usersSagas() {
   yield takeLatest(TYPES.GET_USERS_LIST, getUsersList);
+  yield takeLatest(TYPES.GET_USER_DETAILS, getUserDetails);
 }

@@ -17,11 +17,11 @@ const useStyles = makeStyles({
   },
 });
 
-export default function MediaCard({name, phone}) {
+export default function MediaCard({name, phone, onClick}) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} onClick={onClick}>
       <CardActionArea>
         {/* <CardMedia
           className={classes.media}
